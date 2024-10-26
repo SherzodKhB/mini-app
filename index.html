@@ -15,9 +15,11 @@
     <script>
         function sendOrder() {
             const order = document.getElementById('order').value;
-            console.log(order); 
-            // Telegram botiga buyurtma ma'lumotlarini yuborish
-            Telegram.WebApp.sendData(order);
+            if (Telegram.WebApp && Telegram.WebApp.sendData) {
+                Telegram.WebApp.sendData(order);  // Bu yerda `order` ma'lumotini yuboramiz
+            } else {
+                alert('Telegram WebApp API mavjud emas!');
+            }
         }
     </script>
 </body>
