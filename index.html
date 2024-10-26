@@ -22,6 +22,7 @@
 
     <script>
         function sendOrder() {
+            alert("Test")
             const order = document.getElementById('order').value;
             if (Telegram.WebApp && Telegram.WebApp.sendData) {
                 Telegram.WebApp.sendData(order);  // Bu yerda `order` ma'lumotini yuboramiz
